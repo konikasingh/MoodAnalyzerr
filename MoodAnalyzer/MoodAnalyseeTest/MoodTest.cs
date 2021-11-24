@@ -4,22 +4,22 @@ using MoodAnalyzer;
 namespace MoodAnalyseeTest
 {
     [TestClass]
-    public class UnitTest1
+    public class MoodTest
     {
         [TestMethod]
         public void TestMethod1()
         {
-            //Test case1
+            //TEST CASE-1
 
             //Arrange
-            string message = "I am in sad mood";
-            string expected = "SAD";
+            string message = null;
+            string expected = "Happy";
 
             //Act
             MoodAnalyser analyser = new MoodAnalyser(message);
-            string actual = analyser.AnalyseMood(message);
+            string actual = analyser.AnalyseMood();
 
-            //Act
+            //Assert
             Assert.AreEqual(expected, actual);
         }
     }
