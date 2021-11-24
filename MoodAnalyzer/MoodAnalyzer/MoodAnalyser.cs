@@ -27,9 +27,11 @@ namespace MoodAnalyzer
             }
             catch (NullReferenceException ex)
             {
-                Console.WriteLine("Null Message Provided");
-                return "Happy";
+                throw new MoodAnalyzerCustomException(MoodAnalyzerCustomException.ExceptionType.Empty_Type_Exception, "Message Should Not Be Empty");
+                //return "Happy";
             }
+
         }
+
     }
 }
