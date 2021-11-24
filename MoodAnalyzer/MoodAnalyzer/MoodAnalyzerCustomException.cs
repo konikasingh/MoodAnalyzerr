@@ -6,25 +6,17 @@ using System.Threading.Tasks;
 
 namespace MoodAnalyzer
 {
-    public class MoodAnalyzerCustomException : Exception
+    public class CustomMoodAnException : Exception
     {
         public ExceptionType type;
-
-        //An enum (or enumeration type) is used to assign constant names to a group of numeric integer values.
         public enum ExceptionType
         {
-            NUll_Type_Exception,
-            Empty_Type_Exception,
-            Class_Not_Found,
-            NO_SUCH_CLASS,
-            NO_SUCH_METHOD,
-            EMPTY_MESSAGE,
-            NULL_VALUE,
-            NO_SUCH_FIELD,
-            OBJECT_CREATION_ISSUE
+            NULL_VALUE, EMPTY_MESSAGE, NO_SUCH_FIELD, NO_SUCH_METHOD,
+            NO_SUCH_CLASS, OBJECT_CREATION_ISSUE
 
         }
-        public MoodAnalyzerCustomException(ExceptionType type, string message) : base(message)
+
+        public CustomMoodAnException(ExceptionType type, string message) : base(message)
         {
             this.type = type;
         }

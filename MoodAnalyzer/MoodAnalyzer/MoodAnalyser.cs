@@ -27,7 +27,7 @@ namespace MoodAnalyzer
                 //this is the custom exception that we declared for checking empty messages. exception type is an enum followed by the message.
                 if (this.message.Equals(string.Empty))
                 {
-                    throw new MoodAnalyzerCustomException(MoodAnalyzerCustomException.ExceptionType.EMPTY_MESSAGE, "Mood should not be Empty");
+                    throw new CustomMoodAnException(CustomMoodAnException.ExceptionType.EMPTY_MESSAGE, "Mood should not be Empty");
                 }
 
                 if (this.message.ToLower().Contains("sad"))
@@ -42,9 +42,8 @@ namespace MoodAnalyzer
 
             catch (NullReferenceException)                  //this shows that it should not be null. NullREferenceException is a predefined exception class
             {
-                throw new MoodAnalyzerCustomException(MoodAnalyzerCustomException.ExceptionType.NULL_VALUE, "Mood can not be null");
+                throw new CustomMoodAnException(CustomMoodAnException.ExceptionType.NULL_VALUE, "Mood can not be null");
             }
         }
-
     }
 }
