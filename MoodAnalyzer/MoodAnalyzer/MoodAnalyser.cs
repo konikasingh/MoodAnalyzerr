@@ -8,29 +8,42 @@ namespace MoodAnalyzer
 {
     public class MoodAnalyser
     {
-        public string message;
+        private string message;        //the private message field of the mood analyser class
 
-        public MoodAnalyser(string message)
+        public MoodAnalyser(string message)        //initialising the parameterised constructor
         {
             this.message = message;
         }
-        public string AnalyseMood()
+
+        public MoodAnalyser()                //initialising the default constructor
         {
-            try
+            this.message = null;
+        }
+
+        public string AnalyseMood()                  //declaring the analyse mood method
+        {
+            try                                      //the try and catch block is for exception handling
             {
-                if (message.ToLower().Contains("sad"))
+                //this is the custom exception that we declared for checking empty messages. exception type is an enum followed by the message.
+                if (this.message.Equals(string.Empty))
+                {
+                    throw new MoodAnalyzerCustomException(MoodAnalyzerCustomException.ExceptionType.EMPTY_MESSAGE, "Mood should not be Empty");
+                }
+
+                if (this.message.ToLower().Contains("sad"))
                 {
                     return "SAD";
                 }
                 else
+                {
                     return "HAPPY";
-            }
-            catch (NullReferenceException ex)
-            {
-                throw new MoodAnalyzerCustomException(MoodAnalyzerCustomException.ExceptionType.Empty_Type_Exception, "Message Should Not Be Empty");
-                //return "Happy";
+                }
             }
 
+            catch (NullReferenceException)                  //this shows that it should not be null. NullREferenceException is a predefined exception class
+            {
+                throw new MoodAnalyzerCustomException(MoodAnalyzerCustomException.ExceptionType.NULL_VALUE, "Mood can not be null");
+            }
         }
 
     }
