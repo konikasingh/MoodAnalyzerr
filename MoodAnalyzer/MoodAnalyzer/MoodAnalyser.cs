@@ -8,7 +8,7 @@ namespace MoodAnalyzer
 {
     public class MoodAnalyser
     {
-        private string message;        //the private message field of the mood analyser class
+        public string message;        //the private message field of the mood analyser class
 
         public MoodAnalyser(string message)        //initialising the parameterised constructor
         {
@@ -45,6 +45,5 @@ namespace MoodAnalyzer
                 throw new CustomMoodAnException(CustomMoodAnException.ExceptionType.NULL_VALUE, "Mood can not be null");
             }
         }
-
     }
 }

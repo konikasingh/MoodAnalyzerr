@@ -6,8 +6,17 @@ using System.Threading.Tasks;
 
 namespace MoodAnalyzer
 {
+    /// <summary>
+    /// Mood analysis class for handling exceptions
+    /// </summary>
+    /// <seealso cref="System.Exception" />
     public class CustomMoodAnException : Exception
     {
+        /// <summary>
+        /// enum for exception type
+        /// enums are like constant values which are numeric integer numbers which either the user assigns or default starting fro  0,1,2...
+        /// </summary>
+
         public ExceptionType type;
         public enum ExceptionType
         {
@@ -19,11 +28,6 @@ namespace MoodAnalyzer
         public CustomMoodAnException(ExceptionType type, string message) : base(message)
         {
             this.type = type;
-        }
-
-        public static object CreateMoodAnalyse(string v1, string v2)
-        {
-            throw new NotImplementedException();
         }
     }
 }
