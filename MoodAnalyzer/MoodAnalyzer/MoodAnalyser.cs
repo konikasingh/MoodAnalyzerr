@@ -45,5 +45,6 @@ namespace MoodAnalyzer
                 throw new CustomMoodAnException(CustomMoodAnException.ExceptionType.NULL_VALUE, "Mood can not be null");
             }
         }
+
     }
 }
